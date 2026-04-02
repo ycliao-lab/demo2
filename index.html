@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世紀天氣 - 天氣查詢服務</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🌸 世紀天氣 🌸</h1>
+            <p>即時天氣查詢服務</p>
+        </div>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="cityInput" 
+                    placeholder="輸入城市名稱（例：台北、東京、紐約）"
+                    class="city-input"
+                >
+                <button id="searchBtn" class="search-btn">搜尋</button>
+                <button id="locationBtn" class="location-btn" title="使用當前位置">📍</button>
+            </div>
+            <div id="error" class="error-message"></div>
+        </div>
+
+        <div class="weather-container">
+            <div id="loadingSpinner" class="loading-spinner hidden">
+                <div class="spinner"></div>
+                <p>載入中...</p>
+            </div>
+
+            <div id="weatherResult" class="weather-result hidden">
+                <div class="location-info">
+                    <h2 id="locationName"></h2>
+                    <p id="updateTime"></p>
+                </div>
+
+                <div class="current-weather">
+                    <div class="temp-display">
+                        <div id="temperature" class="temperature"></div>
+                        <div id="weatherDesc" class="weather-desc"></div>
+                    </div>
+                    <div class="weather-icon">
+                        <div id="weatherIcon" class="icon-large"></div>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <span class="label">體感溫度</span>
+                        <span id="feelsLike" class="value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">濕度</span>
+                        <span id="humidity" class="value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">風速</span>
+                        <span id="windSpeed" class="value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">氣壓</span>
+                        <span id="pressure" class="value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">能見度</span>
+                        <span id="visibility" class="value"></span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">紫外線指數</span>
+                        <span id="uvIndex" class="value"></span>
+                    </div>
+                </div>
+
+                <div class="forecast-section">
+                    <h3>7 天天氣預報</h3>
+                    <div id="forecastContainer" class="forecast-container"></div>
+                </div>
+            </div>
+
+            <div id="welcome" class="welcome-message">
+                <p>👋 歡迎使用世紀天氣！</p>
+                <p>請輸入城市名稱或點擊📍按鈕使用您的位置</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>天氣數據來自 Open-Meteo API</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
